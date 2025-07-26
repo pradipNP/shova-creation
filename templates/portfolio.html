@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Portfolio - Shova Creation{% endblock %}
+
+{% block content %}
+<div class="container mt-5 pt-5" style="margin-top: 100px;">
+
+    <h2 class="text-center mb-4">My Portfolio</h2>
+    <div class="portfolio-container">
+        {% for i in range(1, 27) %}
+        <div class="portfolio-item">
+            <a href="{{ url_for('static', filename='images/portfolio/portfolio' ~ i ~ '.jpg') }}" data-lightbox="portfolio-gallery">
+                <img 
+                    src="{{ url_for('static', filename='images/portfolio/portfolio' ~ i ~ '.jpg') }}" 
+                    alt="Portfolio Image {{ i }}" 
+                    loading="lazy"
+                >
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

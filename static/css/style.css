@@ -1,0 +1,293 @@
+/* GENERAL BODY STYLES */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', sans-serif;
+  
+}
+
+/* NAVBAR */
+.custom-navbar {
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 70px;
+  position: absolute; /* Set navbar on top of the hero */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.navbar-nav .nav-link.active {
+  border-bottom: 2px solid #fff;
+}
+
+.logo-img {
+  height: 100%;
+  max-height: 100px;   /* Safe upper limit to avoid huge scaling */
+  width: 100%;
+  object-fit: contain;
+  padding: 5px 10px;
+}
+
+/* HERO CAROUSEL SECTION */
+.hero-carousel {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 0;
+  top: 0;
+}
+
+.hero .carousel-item img,
+.hero-image {
+  width: 100%;
+  height: 100vh; /* full screen height */
+  object-fit: cover;
+  display: block;
+}
+
+/* Ensure hero starts from top of page */
+body > .hero-carousel {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* CAROUSEL CONTROLS */
+.carousel-control-prev,
+.carousel-control-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6%;
+  opacity: 0.7;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 50%;
+}
+
+/* SECTION STYLING */
+.portfolio-preview img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  
+}
+
+/* FOOTER */
+.footer {
+  background: #111;
+  
+}
+
+/* WHATSAPP ICON */
+.whatsapp-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.whatsapp-icon img {
+  height: 50px;
+  width: 50px;
+}
+
+/* SERVICE CARD */
+.service-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+/* CONTACT FORM */
+.contact-form input,
+.contact-form textarea {
+  margin-top: 10px;
+}
+
+.flash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1055;
+  pointer-events: none; /* allows clicking behind it */
+}
+
+.flash-centered {
+  pointer-events: all; /* enable button click */
+  min-width: 300px;
+  max-width: 90%;
+  text-align: center;
+  font-size: 18px;
+  z-index: 1060;
+}
+
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.photographer-section {
+  background-color: #ffffff;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.photographer-section .section-heading {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.photographer-img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border: 5px solid #141414;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.portfolio-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item img:hover {
+    transform: scale(1.03);
+}
+
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.portfolio-item {
+    width: 20%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.portfolio-item img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Keeps square shape */
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+/* Medium screens: 3 per row */
+@media (max-width: 992px) {
+    .portfolio-item {
+        width: 33.33%;
+    }
+}
+
+/* Small screens: 2 per row */
+@media (max-width: 768px) {
+    .portfolio-item {
+        width: 50%;
+    }
+}
+
+/* Extra small screens: 1 per row */
+@media (max-width: 480px) {
+    .portfolio-item {
+        width: 100%;
+    }
+}
+
+.underline-title {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -8px;
+  height: 3px;
+  width: 100%;
+  background-color: #47373a; /* Customize this color if needed */
+}
+
+#stars i {
+  font-size: 2rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#stars i.hovered,
+#stars i.selected {
+  color: #ffc107; /* gold */
+}
+
+.star-rating {
+  display: flex;
+  gap: 5px;
+  direction: rtl;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 2rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: gold;
+}

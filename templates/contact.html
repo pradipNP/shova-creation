@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container mt-5 pt-5">
+  <h2 class="text-center mb-4">Contact Us</h2>
+
+  <!-- Contact Form -->
+  <form method="POST" action="{{ url_for('contact') }}">
+    <div class="mb-3">
+      <label for="name" class="form-label">Your Name</label>
+      <input type="text" id="name" name="name" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Your Email</label>
+      <input type="email" id="email" name="email" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label">Message</label>
+      <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-dark">Send Message</button>
+    </div>
+  </form>
+
+  <!-- Google Map Embedded -->
+  <div class="mt-5">
+    <h4 class="text-center mb-3">Our Studio Location</h4>
+    <div class="ratio ratio-16x9">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d482.481095718997!2d83.4368293054886!3d27.484917173032326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399699f6912a1df3%3A0x8dc396af7e3e1c06!2sFCMP%2BXQ6%2C%20Meaudihawa%2C%20Nepal!5e0!3m2!1sen!2sin!4v1753355727139!5m2!1sen!2sin"
+        width="100%" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,274 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Hero Carousel Section -->
+<section class="hero">
+  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{ url_for('static', filename='images/hero1.jpg') }}" class="d-block w-100 hero-image" alt="Hero 1">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='images/hero2.jpg') }}" class="d-block w-100 hero-image" alt="Hero 2">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='images/hero3.jpg') }}" class="d-block w-100 hero-image" alt="Hero 3">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='images/hero4.jpg') }}" class="d-block w-100 hero-image" alt="Hero 4">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='images/hero5.jpg') }}" class="d-block w-100 hero-image" alt="Hero 5">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='images/hero6.jpg') }}" class="d-block w-100 hero-image" alt="Hero 6">
+      </div>
+    </div>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</section>
+
+<!-- Intro Section -->
+<section class="container mt-5 pt-3">
+  <div class="text-center">
+    <h2 class="text-center mt-5 mb-4 underline-title">Welcome to Shova Creation</h2>
+
+    <p class="lead">Shova Creation Photography, based in Bhairahawa, Nepal, brings years of experience capturing life's significant moments. We've had the honor of preserving memories for Nepali communities, focusing on authentic expressions of joy, love, and important milestones.
+
+Now, we're expanding our services to India, eager to document its stunning landscapes and diverse communities. Operating in both Nepal and India, Shova Creation Photography combines cultural understanding with photographic expertise.
+
+Our goal is to transcend simple picture-taking by crafting narratives through light and shadow, transforming fleeting instances into lasting keepsakes. We utilize advanced equipment and are dedicated to perfection, ensuring each photograph is infused with genuine emotion and authenticity.
+
+We invite you to view our portfolio, a reflection of our commitment to excellence. Let Shova Creation Photography capture the extraordinary in your life.</p>
+  </div>
+</section>
+
+<!-- Portfolio Preview -->
+<section class="container portfolio-preview my-5" class="py-5 bg-light">
+  <div class="text-center">
+    <h3 class="section-title text-center">Portfolio Samples</h3>
+  </div>
+  <div class="row g-3">
+    {% for i in range(1,13) %}
+    <div class="col-6 col-md-4 col-lg-2">
+      <a href="{{ url_for('static', filename='images/portfolio/portfolio' ~ i ~ '.jpg') }}" data-lightbox="portfolio">
+        <img src="{{ url_for('static', filename='images/portfolio/portfolio' ~ i ~ '.jpg') }}" class="img-fluid" loading="lazy" alt="Portfolio Image {{ i }}">
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Services -->
+<section class="container my-5">
+  <div class="text-center">
+    <h3 class="section-title text-center">Services</h3>
+  </div>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="service-card">
+        <h5>Wedding Photography</h5>
+        <p>Capturing timeless moments on your special day with elegance and detail.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="service-card">
+        <h5>Birthday & Ceremonies</h5>
+        <p>From birthdays to baby showers — memorable highlights of your celebrations.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="service-card">
+        <h5>Custom Photoshoots</h5>
+        <p>Tailored photoshoots that match your vibe — couple, solo, or themed shoots.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Get in Touch Section -->
+<section id="contact" class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center mb-4">
+      <div class="col-md-6">
+        <h2 class="section-title text-start">Enquire/Book Now</h2>
+      </div>
+      <div class="col-md-6 text-end">
+        <h2 class="section-title text-end">Location</h2>
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <!-- Left Column: Contact Form -->
+      <div class="col-md-6 mb-4">
+        <form method="POST" action="/contact-home">
+          <div class="form-group mb-3">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" required>
+          </div>
+          <div class="form-group mb-3">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" required>
+          </div>
+          <div class="form-group mb-3">
+            <label for="message">Message</label>
+            <textarea class="form-control" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-dark">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Right Column: Location Heading + Google Map -->
+      <div class="col-md-6">
+
+        <!-- Google Map Embed -->
+        <div class="map-responsive mt-3">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d482.481095718997!2d83.4368293054886!3d27.484917173032326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399699f6912a1df3%3A0x8dc396af7e3e1c06!2sFCMP%2BXQ6%2C%20Meaudihawa%2C%20Nepal!5e0!3m2!1sen!2sin!4v1753355727139!5m2!1sen!2sin"
+            width="100%"
+            height="300"
+            style="border:0; border-radius: 10px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <p class="location-text mt-2">
+  Shova Creation Photography<br>
+  <small class="text-muted" style="font-size: 16px;">Lumbini, Rupandehi<br>Nepal</small>
+</p>
+
+<!-- Social Icons -->
+<div class="social-icons mt-2">
+  <a href="https://www.instagram.com/niteshkumarprajapati89?igsh=eXU2cDl6MmlxZjB5" target="_blank" class="me-3 text-dark">
+    <i class="fab fa-instagram fa-lg"></i>
+  </a>
+  <a href="https://www.facebook.com/share/166b2BbMpx/" target="_blank" class="me-3 text-dark">
+    <i class="fab fa-facebook fa-lg"></i>
+  </a>
+  <a href="https://youtube.com/@shovacreation-qq4mv?si=l0vw23ds3NY-ilnX" target="_blank" class="me-3 text-dark">
+    <i class="fab fa-youtube fa-lg"></i>
+  </a>
+  <a href="https://wa.me/9779802669006" target="_blank" class="text-dark">
+    <i class="fab fa-whatsapp fa-lg"></i>
+  </a>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Photographer Section -->
+<section class="py-5 photographer-section">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Text (Left) -->
+      <div class="col-lg-8 col-md-7">
+        <h2 class="fw-bold mb-3">
+          Director <small class="text-muted" style="font-size: 16px;">(Nitesh Kumar Prajapati)</small>
+        </h2>
+        <p class="mb-0">
+          Nitesh Kumar Prajapati, the visionary behind Shova Creation, brings a masterful blend of creativity, precision, and storytelling to every frame. With a deep-rooted passion for photography and a sharp eye for detail, he transforms everyday moments into captivating visual narratives. His work reflects not just technical excellence, but a sincere dedication to preserving memories that speak from the heart.
+        </p>
+      </div>
+      
+      <!-- Circular Image (Right) -->
+      <div class="col-lg-4 col-md-5 text-end">
+        <img 
+          src="{{ url_for('static', filename='images/photographer.jpg') }}" 
+          alt="Nitesh Kumar Prajapati" 
+          class="img-fluid rounded-circle border border-dark" 
+          style="width: 250px; height: 250px; object-fit: cover;"
+        >
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== Rating Section Start ===== -->
+<section id="rating-section" class="py-5 text-center bg-light">
+  <div class="container">
+    <h2 class="mb-4 section-title">Rate Our Work</h2>
+    <form id="rating-form" class="d-flex justify-content-center align-items-center flex-wrap gap-3">
+      <div id="stars" class="star-rating">
+        <!-- ✅ Correct: Reverse order in DOM to match left-to-right UI logic -->
+<input type="radio" name="rating" value="5" id="star5"><label for="star5">&#9733;</label>
+<input type="radio" name="rating" value="4" id="star4"><label for="star4">&#9733;</label>
+<input type="radio" name="rating" value="3" id="star3"><label for="star3">&#9733;</label>
+<input type="radio" name="rating" value="2" id="star2"><label for="star2">&#9733;</label>
+<input type="radio" name="rating" value="1" id="star1"><label for="star1">&#9733;</label>
+
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <div class="mt-4">
+      <p class="mb-1">Total Votes: <strong id="rating-count">{{ total_votes }}</strong></p>
+      <p>Average Rating: <strong id="rating-average">{{ avg_rating }}/5</strong></p>
+    </div>
+  </div>
+</section>
+<!-- ===== Rating Section End ===== -->
+
+<!-- About Section -->
+<section class="container my-5">
+  <div class="text-center">
+    <h3 class="section-title text-center">About</h3>
+  </div>
+  <p class="text-center px-3 px-md-5">
+    Shova Creation is dedicated to preserving your beautiful memories with a touch of creativity and passion. Our lens doesn’t just capture images — it captures emotions, relationships, and the magic of the moment. Whether it's a lavish wedding or a quiet birthday gathering, we ensure your moments become timeless.
+  </p>
+</section>
+
+<!-- JavaScript -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("rating-form");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const selected = document.querySelector('input[name="rating"]:checked');
+    if (!selected) {
+      alert("Please select a star rating.");
+      return;
+    }
+
+    const ratingValue = selected.value;
+
+    try {
+      const response = await fetch("/submit-rating", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ rating: ratingValue })
+      });
+
+      const result = await response.json();
+      alert(result.message);
+
+      const r = await fetch("/get-rating");
+      const ratingData = await r.json();
+
+      document.getElementById("rating-average").textContent = ratingData.average;
+      document.getElementById("rating-count").textContent = ratingData.count;
+
+      form.reset();
+    } catch (err) {
+      alert("Something went wrong. Please try again.");
+    }
+  });
+});
+</script>
+
+{% endblock %}
