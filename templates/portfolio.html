@@ -9,9 +9,9 @@
     <div class="portfolio-container">
         {% for i in range(1, 27) %}
         <div class="portfolio-item">
-            <a href="{{ url_for('static', filename='images/portfolio/portfolio' ~ i ~ '.jpg') }}" data-lightbox="portfolio-gallery">
+            <a href="{{ url_for('static', filename='images/portfolio/portfolio' ~ i ~ '.JPG') }}" data-lightbox="portfolio-gallery">
                 <img 
-                    src="{{ url_for('static', filename='images/portfolio/portfolio' ~ i ~ '.jpg') }}" 
+                    src="{{ url_for('static', filename='images/portfolio/portfolio' ~ i ~ '.JPG') }}" 
                     alt="Portfolio Image {{ i }}" 
                     loading="lazy"
                 >
