@@ -93,3 +93,14 @@
   }
 }
 
+@media (max-width: 768px) {
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    padding: 15px;
+  }
+
+  .footer {
+    padding: 20px 15px;
+    font-size: 14px;
+  }
+}
