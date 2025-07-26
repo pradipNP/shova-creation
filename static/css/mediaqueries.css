@@ -77,3 +77,19 @@
     width: 140px;
   }
 }
+
+/* Fix for social icons visibility on mobile */
+@media (max-width: 768px) {
+  .social-icons {
+    display: flex !important;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .social-icons a {
+    margin: 0 10px;
+    font-size: 22px;
+    color: #ffffff; /* or your desired color */
+  }
+}
+
