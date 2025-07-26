@@ -10,7 +10,7 @@ body, html {
 
 /* NAVBAR */
 .custom-navbar {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(85, 85, 85, 0.8);
   height: 70px;
   position: absolute; /* Set navbar on top of the hero */
   width: 100%;
