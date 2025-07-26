@@ -91,8 +91,11 @@ body > .hero-carousel {
 /* FOOTER */
 .footer {
   background: #111;
-  
+  color: #fff;
+  padding: 30px 20px; /* add spacing inside the footer */
+  text-align: center;
 }
+
 
 /* WHATSAPP ICON */
 .whatsapp-icon {
