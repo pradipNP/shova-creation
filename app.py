@@ -172,6 +172,13 @@ def blog():
 def page_not_found(e):
     return render_template('404.html'), 404
 
+@app.route("/debug-files")
+def debug_files():
+    import os
+    files = os.listdir("static/images")
+    return "<br>".join(files)
+
+
 
 # ===== Run Server =====
 if __name__ == '__main__':
