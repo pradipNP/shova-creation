@@ -54,19 +54,25 @@ body > .hero-carousel {
   padding-top: 0 !important;
 }
 
-/* CAROUSEL CONTROLS */
+/* CAROUSEL CONTROLS - VERTICALLY CENTERED */
 .carousel-control-prev,
 .carousel-control-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   width: 5%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-  opacity: 0.7;
+  height: 60px;
+  z-index: 15;
+  opacity: 0.8;
+  color: #fff;
+}
+
+.carousel-control-prev {
+  left: 10px;
+}
+
+.carousel-control-next {
+  right: 10px;
 }
 
 .carousel-control-prev-icon,
@@ -75,19 +81,6 @@ body > .hero-carousel {
   padding: 20px;
   border-radius: 50%;
   background-size: 100% 100%;
-}
-
-
-@media (max-width: 768px) {
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 10%;
-  }
-
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    padding: 15px;
-  }
 }
 
 
