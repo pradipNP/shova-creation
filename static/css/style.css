@@ -286,6 +286,36 @@ body > .hero-carousel {
   transition: color 0.2s;
 }
 
+/* Make logo responsive */
+.logo-img {
+  height: 60px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* WhatsApp floating icon */
+.whatsapp-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: 50px;
+  height: 50px;
+}
+.whatsapp-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Navbar tweaks */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.navbar-nav .nav-link.active {
+  border-bottom: 2px solid #fff;
+}
+
+
 .star-rating input:checked ~ label,
 .star-rating label:hover,
 .star-rating label:hover ~ label {
