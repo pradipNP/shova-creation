@@ -43,7 +43,7 @@ body, html {
 .hero .carousel-item img,
 .hero-image {
   width: 100%;
-  height: auto; /* full screen height */
+  height: 100vh; /* full screen height */
   object-fit: cover;
   display: block;
 }
